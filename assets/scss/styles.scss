@@ -3,9 +3,17 @@
 @use "./nftcard";
 
 body {
+  width: 100vw;
   background: var(--very-dark-blue-body);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--body-font-family);
+}
+
+main {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  min-width: var(--min-mobile-size);
 }
