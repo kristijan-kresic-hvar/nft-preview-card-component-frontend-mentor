@@ -1,0 +1,11 @@
+@use "./variables";
+@use "./reset.scss";
+@use "./nftcard";
+
+body {
+  background: var(--very-dark-blue-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--body-font-family);
+}

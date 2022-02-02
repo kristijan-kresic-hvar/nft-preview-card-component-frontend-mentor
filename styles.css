@@ -1,0 +1,227 @@
+:root {
+  /* == layout == */
+  --min-mobile-size: 375px;
+  --max-desktop-size: 1440px;
+  /* == colors == */
+  /* primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --cyan-opacity: hsla(178, 100%, 50%, 0.5);
+  /* neutral */
+  --very-dark-blue-body: hsl(217, 54%, 11%);
+  --very-dark-blue-card: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  /* == Typography == */
+  /* Body copy */
+  --body-font-size: 18px;
+  /* Font */
+  --body-font-family: "Outfit", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.nftcard {
+  max-width: 375px;
+  width: 90%;
+  background: var(--very-dark-blue-card);
+  padding: 25px;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+  border-radius: 15px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.nftcard__thumbnail {
+  max-height: 300px;
+  cursor: pointer;
+  position: relative;
+}
+.nftcard__thumbnail--hoverstate {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cyan-opacity);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.nftcard__thumbnail > img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 8px;
+}
+.nftcard__thumbnail:hover .nftcard__thumbnail--hoverstate {
+  opacity: 1;
+}
+.nftcard__info {
+  margin: 25px 0;
+}
+.nftcard__info > h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  transition: color 300ms ease-in-out;
+}
+.nftcard__info > h2:hover {
+  color: var(--cyan);
+}
+.nftcard__info > p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--soft-blue);
+  margin-top: 17px;
+}
+.nftcard__info--footer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nftcard__info--footer div:nth-child(1),
+.nftcard__info--footer div:nth-child(2) {
+  display: flex;
+}
+.nftcard__info--footer div:nth-child(1) img,
+.nftcard__info--footer div:nth-child(2) img {
+  margin-right: 8px;
+}
+.nftcard__info--footer div:nth-child(1) p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--cyan);
+}
+.nftcard__info--footer div:nth-child(2) p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--soft-blue);
+}
+.nftcard__footer {
+  border-top: 1px solid var(--very-dark-blue-line);
+  padding-top: 17px;
+  display: flex;
+  align-items: center;
+}
+.nftcard__footer > img {
+  object-fit: contain;
+  width: 35px;
+}
+.nftcard__footer > p {
+  margin-left: 17px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--soft-blue);
+}
+.nftcard__footer--username {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--white);
+  transition: color 350ms ease-in-out;
+  cursor: pointer;
+}
+.nftcard__footer--username:hover {
+  color: var(--cyan);
+}
+
+body {
+  background: var(--very-dark-blue-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--body-font-family);
+}
+
+/*# sourceMappingURL=styles.css.map */

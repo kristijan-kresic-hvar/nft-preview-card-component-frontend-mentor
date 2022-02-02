@@ -2,32 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./styles.css">
   <title>Frontend Mentor | NFT preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <!-- Page main content start -->
+  <main>
+    <!-- Card start -->
+    <div class="nftcard">
 
-  Equilibrium #3429
+      <!-- Card thumbnail start -->
+      <section class="nftcard__thumbnail">
+        <img src="./images/image-equilibrium.jpg" alt="nft card thumbnail">
+        <span class="nftcard__thumbnail--hoverstate">
+          <img src="./images/icon-view.svg" alt="view icon">
+        </span>
+      </section>
+      <!-- Card thumbnail end -->
 
-  Our Equilibrium collection promotes balance and calm.
+      <!-- Card main content start -->
+      <section class="nftcard__info">
+        <h2>Equilibrium #3429</h2>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="nftcard__info--footer">
+          <div>
+            <img src="./images/icon-ethereum.svg" alt="eth icon">
+            <p>0.041 ETH</p>
+          </div> 
+          <div>
+            <img src="./images/icon-clock.svg" alt="clock icon">
+            <p>3 days left</p>
+          </div>
+        </div>
+      </section>
+      <!-- Card main content end -->
 
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
+      <!-- Card footer start -->
+      <section class="nftcard__footer">
+        <img src="./images/image-avatar.png" alt="user avatar">
+        <p>Creation of <span class="nftcard__footer--username">Jules Wyvern</span></p>
+      </section>
+      <!-- Card footer end -->
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    </div>
+    <!-- Card end -->
+  </main>
+  <!-- Page main content end -->
 </body>
 </html>
